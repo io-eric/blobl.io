@@ -17,7 +17,7 @@ type Bullet struct {
 	Speed            float64
 	Size             int
 	FiredByUnit      bool
-	RemoveFlag       bool // Flag to mark unit for removal
+	RemoveFlag       bool // Flag to mark bullet for removal
 	DamageMultiplier float32
 	Behavior         BulletBehavior
 
