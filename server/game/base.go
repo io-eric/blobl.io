@@ -16,7 +16,7 @@ type Base struct {
 	Owner                Owner
 	Color                []byte
 	Position             PositionInt
-	Health               Health // Base health not higher then 256
+	Health               Health
 	Buildings            map[ID]*Building
 	BuildingLimits       map[BuildingType]BuildingLimit
 	Bullets              map[ID]*Bullet
