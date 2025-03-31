@@ -6,6 +6,13 @@
 
 A complete, self-hostable implementation of the blobl.io multiplayer game, featuring server, client, obufscator, authentication, and load balancing components.
 
+## Community Showcases  
+Watch these community-created videos to see blobl.io in action:  
+
+1. [NOVO UPDATE no Bloble.io by Godenot](https://www.youtube.com/watch?v=IHBgW5UDOWI&t=1360s&ab_channel=Godenot) 
+2. [Blobl.io | 1 Million Score | BLOBLE.IO by Kingslayer](https://www.youtube.com/watch?v=skbQvWQswDE&ab_channel=Kingslayer)
+3. [Blobl.io | Kingslayer | BLOBLE.IO by Kingslayer](https://www.youtube.com/watch?v=7hT4s7M0saQ&ab_channel=Kingslayer) 
+
 ## Overview
 
 **blobl.io** is an open-source multiplayer IO game inspired by the original **bloble.io**. It is a real-time strategy game where players compete to capture bases, build and destroy structures, command units. The game features a distributed architecture designed for scalability and performance.
