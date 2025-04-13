@@ -116,9 +116,6 @@ cd loadbalancer
 # Install dependencies
 npm install
 
-# Configure server pool
-# Edit config.js with your server information
-
 # Start service
 npm start
 ```
