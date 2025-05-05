@@ -1,10 +1,10 @@
-import Worker from './network.worker.js';
+// import Worker from './network.worker.js'; // Note: Uncomment when using Webpack to bundle the worker (also see _initWorker())
 
 export default class Network {
     constructor (loadBalancerAddress, core) {
         this.core = core;
         this.loadBalancerAddress = loadBalancerAddress;
-        this.isDev = this.isLocalDomain();// Detect if it's a local domain
+        this.isDev = this.isLocalDomain(); // Detect if it's a local domain
         this.serverAddress = null;
 
         // Event listeners
@@ -20,8 +20,8 @@ export default class Network {
     }
 
     _initWorker () {
-      //this.worker = new Worker('src/network/network.worker.js', { type: 'module' });
-      this.worker = new Worker({ type: 'module' });
+        //this.worker = new Worker({type: 'module' }); // Webpack, bundled
+        this.worker = new Worker('src/network/network.worker.js', { type: 'module'}); // Local dev, unbundled
 
         // Listen for messages from the worker
         this.worker.onmessage = (event) => {
