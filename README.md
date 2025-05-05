@@ -73,22 +73,63 @@ GOOS=linux GOARCH=amd64 go build -gcflags="all=-N -l" -o server
 go run *.go
 ```
 
-### Client
+### Client Setup
 
-```bash
-# Navigate to client directory
-cd client
+This section outlines the steps to set up and run the client application for both local development and production.
 
-# Install dependencies
-npm install
+**Local Development**
 
-# Development
-# Open index.html in browser or use a live server
+1.  **Navigate to the client directory:**
+    ```bash
+    cd client
+    ```
 
-# Production build
-npm run build
-# Serve the resulting 'dist' directory with your preferred web server
-```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development environment:**
+    Use a live server for hot-reloading and a better development experience. For example, with `npm`:
+    ```bash
+    # If you have a live server package installed (e.g., live-server)
+    npm start
+    ```
+**Production Build**
+
+1.  **Navigate to the client directory:**
+    ```bash
+    cd client
+    ```
+
+2.  **Install dependencies (if you haven't already):**
+    ```bash
+    npm install
+    ```
+
+3.  **Build for production:**
+    ```bash
+    npm run build
+    ```
+
+4.  **Webpack Worker Configuration (Important for Production):**
+    When building for production with Webpack, you need to adjust the worker initialization in `client/src/network/Network.js`.
+
+    * **Uncomment the Webpack worker import:**
+        ```js
+        import Worker from './network.worker.js'; // First line of the file
+        this.worker = new Worker({ type: 'module' }); // Inside the _initWorker() function
+        ```
+
+    * **Comment out the inline worker import:**
+        ```js
+        // this.worker = new Worker('src/network/network.worker.js', { type: 'module' }); // Inside the _initWorker() function
+        ```
+
+    **Note:** These changes ensure that the Webpack bundled worker is correctly utilized in the production build.
+
+5.  **Locate Production Build:**
+    After the build process is complete, the obfuscated, minified, and bundled JavaScript files will be located in the `dist/` directory.
 
 ### Authentication Server
 
@@ -107,18 +148,36 @@ cp .env.example .env
 npm start
 ```
 
-### Load Balancer
+### Load Balancer Setup
 
-```bash
-# Navigate to load balancer directory
-cd loadbalancer
+**Local Development:**
 
-# Install dependencies
-npm install
+For local development, the load balancer is typically **not required** and can be skipped. When the client application runs on `localhost` or `127.0.0.1`, it is generally configured to directly connect to the game server running on its default address and port,`localhost:8080`. Therefore, the load balancer step is unnecessary in a local testing environment.
 
-# Start service
-npm start
-```
+**Production Deployment:**
+
+The load balancer becomes **essential for production deployments** to manage traffic, ensure high availability, and facilitate scalability across multiple game server instances.
+
+**Setup Instructions (for Production or Advanced Local Testing):**
+
+If you are setting up a production environment or have a specific need for a load balancer in your local testing:
+
+1.  **Navigate to the load balancer directory:**
+    ```bash
+    cd loadbalancer
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the load balancer service:**
+    ```bash
+    npm start
+    ```
+    
+**Note:** The configuration of your load balancer dictates how many game server instances are launched and managed. You'll need to configure it according to your desired capacity and scaling strategy.
 
 ## Network Architecture
 
