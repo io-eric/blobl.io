@@ -204,7 +204,7 @@ This project is **no longer actively maintained** and is considered abandoned. H
 1. Click the "Fork" button at the top right of this repository to create your own copy.
 2. Clone your forked repository to your local machine:
    ```bash
-   git clone https://github.com/eric-io/blobl.io.git
+   git clone https://github.com/io-eric/blobl.io.git
    ```
 
 ## License
