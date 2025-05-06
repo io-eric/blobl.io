@@ -7,8 +7,7 @@ import ThemeManager from "../../components/managers/ThemeManager.js";
 export default class Armory extends Building {
     constructor (color, position = { x: 0, y: 0 }, variant = 0, id = -1) {
         const details = BuildingDetails.ARMORY.BASIC;
-        super(id, BuildingTypes.ARMORY, color, details.size, position, variant);
-        this.details = details;
+        super(id, BuildingTypes.ARMORY, color, details, position, variant);
     }
 
     initPolygon () {

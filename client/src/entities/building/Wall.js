@@ -7,8 +7,7 @@ import ThemeManager from "../../components/managers/ThemeManager.js";
 export default class Wall extends Building {
     constructor (color, position = { x: 0, y: 0 }, variant = 0, id = -1) {
         const details = BuildingDetails.WALL.BASIC;
-        super(id, BuildingTypes.WALL, color, details.size, position, variant);
-        this.details = details;
+        super(id, BuildingTypes.WALL, color, details, position, variant);
         this.rotationOffset = Math.PI / 2;
 
         // For Micro Generator

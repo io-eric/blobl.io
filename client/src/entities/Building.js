@@ -8,13 +8,14 @@ export const SelectionState = {
 };
 
 export default class Building extends Renderable {
-    constructor (id, type, color, size, position, variant = 0) {
+    constructor (id, type, color, details, position, variant = 0) {
         super();
         this.id = id;
         this.type = type;
         this.color = color;
         this.position = position;
-        this.size = size;
+        this.size = details.size;
+        this.details = details;
         this.targetPoint = { x: 1, y: 0 }; // Default target point
         this.angleToTarget = 0;
         this.rotationOffset = 0;

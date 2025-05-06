@@ -7,9 +7,8 @@ import ThemeManager from "../../components/managers/ThemeManager.js";
 export default class Generator extends Building {
     constructor (color, position = { x: 0, y: 0 }, variant = 0, id = -1) {
         const details = BuildingDetails.GENERATOR.BASIC;
-        super(id, BuildingTypes.GENERATOR, color, details.size, position, variant);
+        super(id, BuildingTypes.GENERATOR, color, details, position, variant);
         this.rotationOffset = Math.PI / 2;
-        this.details = details;
 
         // Initialize animation properties
         this.animationPhase = 0;

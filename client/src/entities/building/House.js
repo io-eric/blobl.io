@@ -7,9 +7,8 @@ import ThemeManager from "../../components/managers/ThemeManager.js";
 export default class House extends Building {
     constructor (color, position = { x: 0, y: 0 }, variant = 0, id = -1) {
         const details = BuildingDetails.HOUSE.BASIC;
-        super(id, BuildingTypes.HOUSE, color, details.size, position, variant);
+        super(id, BuildingTypes.HOUSE, color, details, position, variant);
         this.rotationOffset = 0;
-        this.details = details;
 
         this.points = [];
 

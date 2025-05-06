@@ -7,12 +7,11 @@ import ThemeManager from "../../components/managers/ThemeManager.js";
 export default class SimpleTurret extends Building {
     constructor (color, position = { x: 0, y: 0 }, variant = 0, id = -1) {
         const details = BuildingDetails.SIMPLE_TURRET.BASIC;
-        super(id, BuildingTypes.SIMPLE_TURRET, color, details.size, position, variant);
+        super(id, BuildingTypes.SIMPLE_TURRET, color, details, position, variant);
 
         this.rotationOffset = Math.PI / 2;
         this.cannonLength = 25; // Length of the cannon
         this.cannonWidth = this.size * 0.65; // Width of the cannon
-        this.details = details;
         this.setUpgrade(variant);
 
         this.recoil = 0; // Initial recoil state
