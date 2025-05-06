@@ -8,8 +8,6 @@ export default class Commander extends Unit {
 
         super(id, UnitTypes.COMMANDER, color, details, position, variant, details);
 
-        this.details = details;
-        this.variant = variant;
         this.flameAnimationTime = 0; // Time tracker for flame animation
 
         this.recoil = 0; // Initial recoil state

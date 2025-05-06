@@ -16,8 +16,6 @@ export default class Soldier extends Unit {
 
         super(id, UnitTypes.SOLDIER, adjustedColor, details, position, variant, details);
 
-        this.details = this.details;
-
         // Set the upgrade method based on the variant during initialization
         this.renderUpgrade = this.getUpgradeRenderMethod(variant);
     }

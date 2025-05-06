@@ -20,8 +20,6 @@ export default class Tank extends Unit {
         super(id, UnitTypes.TANK, adjustedColor, details, position, variant);
 
 
-        this.details = details;
-        this.variant = variant;
         this.flameAnimationTime = 0; // Time tracker for flame animation
 
 
