@@ -8,7 +8,7 @@ export const SelectionState = {
 };
 
 export default class Building extends Renderable {
-    constructor (id, type, color, size, position, variant = 0, range = 0) {
+    constructor (id, type, color, size, position, variant = 0) {
         super();
         this.id = id;
         this.type = type;
